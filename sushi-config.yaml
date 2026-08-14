@@ -1,0 +1,342 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: au.gov.digitalhealth.fhir.hcpd
+canonical: http://digitalhealth.gov.au/fhir/hcpd
+date: 2026-07-02
+name: HCPD_ImplementationGuide
+title: Health Connect Australia Provider Directory FHIR Implementation Guide
+description: This Implementation Guide defines an Health Connect Australia Provider Directory within Australian context.
+
+status: active # draft | active | retired | unknown
+    
+version: "26.0.0"
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+releaseLabel: Snapshot HL7 AU Connectathon Aug 25 & 26, 2026
+
+copyrightYear: 2026+
+license: CC-BY-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+
+jurisdiction: urn:iso:std:iso:3166#AU "Australia"
+
+publisher:
+  name: Australian Digital Health Agency
+  url: https://www.digitalhealth.gov.au/
+  email: help@digitalhealth.gov.au
+
+
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current). For advanced
+# use cases, the value can be an object with keys for id, uri, and version.
+#
+dependencies:
+  hl7.fhir.au.base:
+    version: 6.0.0
+    uri: http://hl7.org.au/fhir/ImplementationGuide/hl7.fhir.au.base
+  hl7.fhir.au.core:
+    version: 2.0.0
+    uri: http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core
+  hl7.fhir.au.pd:
+    version: current
+    uri: http://hl7.org.au/fhir/pd/ImplementationGuide/hl7.fhir.au.pd
+  hl7.fhir.uv.bulkdata:
+    version: 3.0.0
+    uri: http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata
+      
+#
+# The pages property corresponds to IG.definition.page. SUSHI can
+# auto-generate the page list, but if the author includes pages in
+# this file, it is assumed that the author will fully manage the
+# pages section and SUSHI will not generate any page entries.
+# The page file name is used as the key. If title is not provided,
+# then the title will be generated from the file name.  If a
+# generation value is not provided, it will be inferred from the
+# file name extension.  Any subproperties that are valid filenames
+# with supported extensions (e.g., .md/.xml) will be treated as
+# sub-pages.
+pages:
+  index.md:
+    title: Home
+  conformance.md:
+    title: Conformance
+  guidance.md:
+    title: Guidance
+    general-guidance.md:
+      title: General Guidance
+    bulk-data-extraction.md:
+      title: Bulk Data Extraction
+      BatchRequestSubmission.md:
+        title: Batch Request Submission
+      BatchRequestStatus.md:
+        title: Batch Request Status
+      BatchRequestResults.md:
+        title: Batch Request Results
+      BatchRequestDelete.md:
+        title: Batch Request Delete
+  security-and-privacy.md:
+    title: Security and Privacy
+  artifacts.html:
+    title: FHIR Artefacts
+    profiles-and-extensions.md:
+      title: Profiles and Extensions
+    pbprn-systems.md:
+      title: PBPRN Supported Systems
+    terminology.md:
+      title: Terminology
+    actors.md:
+      title: Actor Definitions
+    capability-statements.md:
+      title: Capability Statements
+    search-parameters.md:
+      title: Search Parameters
+  examples.md:
+    title: Examples
+  hcpdAPI.md:
+    title: HCPD API
+  support.md:
+    title: Support
+    known-issues.md:
+      title: Known Issues
+    downloads.md:
+      title: Downloads
+  changelog.md:
+    title: Change Log
+    contributing.md:
+      title: Contributing
+  legal.md:
+    title: Licence and Legal
+
+#
+#
+# The parameters property represents IG.definition.parameter. Rather
+# than a list of code/value pairs (as in the ImplementationGuide
+# resource), the code is the YAML key. If a parameter allows repeating
+# values, the value in the YAML should be a sequence/array.
+# For parameters defined by core FHIR see:
+# http://build.fhir.org/codesystem-guide-parameter-code.html
+# For parameters defined by the FHIR Tools IG see:
+# http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
+#
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    input/resources
+    fsh-generated/resources
+  path-pages:
+    - input/pagecontent
+    - input/intro-notes
+    - fsh-generated/includes
+    - input/resources  
+    #- input/summaries
+  path-expansion-params: '../../input/_resources/exp-params.json' 
+  # active-tables: false
+  apply-contact: true
+  apply-jurisdiction: true
+  apply-publisher: true
+  apply-version: true
+  apply-copyright: true
+  default-copyright: true
+  show-inherited-invariants: false
+  usage-stats-opt-out: true
+  excludexml: false
+  excludejson: false
+  excludettl: false
+  excludemap: true
+  shownav: false
+  # generate: #what does this do - todo: remove and see4
+  #   - xml
+  #   - json
+  # no-validate:
+  #   - '*/*'  # does not seems to work
+  #   - 'StructureDefinition/*'
+  # html-exempt:  
+  # ipa-comparison: 
+  #   - '{current}'
+  logging:
+    - tx #tx: Messages describing the use of the terminology server (for debugging)
+    - html #html: Log when validating an html page (troubleshooting only - leave off)
+    - generate #generate: Log when producing an individual resource (troubleshooting only - leave off)
+    - init #init: Messages describing the start up process (for debugging)
+    - progress #progress: Overall progress messages
+
+  # pin-canonical documentation: https://build.fhir.org/ig/FHIR/ig-guidance/branches/master/pinning.html
+  # pin-canonical discussion: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Canonical.20Pinning/with/534497073
+  # pin-canonicals can be set to 'pin-none', 'pin-specified', or 'pin-all'
+  pin-canonicals: pin-all
+
+  special-url: [http://digitalhealth.gov.au/fhir/cc/StructureDefinition/active-period, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/alternate-name, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/amenity, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/iar-levels-of-care, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/new-patient-availability, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/practitioner-role-communication, 
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/referral-information-for-referrer,
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/suppressed,
+                http://digitalhealth.gov.au/fhir/cc/CodeSystem/responsible-party-type,
+                http://digitalhealth.gov.au/fhir/cc/ValueSet/responsible-party-type,
+                http://digitalhealth.gov.au/fhir/cc/StructureDefinition/pbprn,
+                http://digitalhealth.gov.au/fhir/cc/SearchParameter/suppressed]
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
+# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
+# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
+# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
+# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
+# │ property below.                                                                                │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Conformance: conformance.html
+  Guidance:
+    "General Guidance": general-guidance.html
+    "Bulk Data Extraction": bulk-data-extraction.html
+  Security and Privacy: security-and-privacy.html
+  FHIR Artefacts:
+    "Artefacts Summary": artifacts.html
+    "Profiles and Extensions": profiles-and-extensions.html
+    "Terminology": terminology.html
+    "Actor Definitions": actors.html
+    "Capability Statements": capability-statements.html
+    "Search Parameters": search-parameters.html
+  Examples: examples.html
+  HCPD API: hcpdAPI.html
+  Support:
+    "Known Issues": known-issues.html
+    "Downloads": downloads.html
+  Change Log: changelog.html
+  Licence and Legal: legal.html
+  
+
+# ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
+# │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
+# │  resource. These properties are less commonly needed than those above.                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+#
+# Those who need more control or want to add additional details to the contact values can use
+# contact directly and follow the format outlined in the ImplementationGuide resource and
+# ContactDetail.
+#
+contact:
+  - name: Australian Digital Health Agency
+    telecom:
+      - system: url
+        value: https://www.digitalhealth.gov.au
+        use: work
+      - system: email
+        value: mailto:help@digitalhealth.gov.au
+        use: work
+# 
+#
+# The global property corresponds to the IG.global property, but it
+# uses the type as the YAML key and the profile as its value. Since
+# FHIR does not explicitly disallow more than one profile per type,
+# neither do we; the value can be a single profile URL or an array
+# of profile URLs. If a value is an id or name, SUSHI will replace
+# it with the correct canonical when generating the IG JSON.
+#
+#
+# The resources property corresponds to IG.definition.resource.
+# SUSHI can auto-generate all of the resource entries based on
+# the FSH definitions and/or information in any user-provided
+# JSON or XML resource files. If the generated entries are not
+# sufficient or complete, however, the author can add entries
+# here. If the reference matches a generated entry, it will
+# replace the generated entry. If it doesn't match any generated
+# entries, it will be added to the generated entries. The format
+# follows IG.definition.resource with the following differences:
+#   * use IG.definition.resource.reference.reference as the YAML key.
+#   * if the key is an id or name, SUSHI will replace it with the
+#     correct URL when generating the IG JSON.
+#   * specify "omit" to omit a FSH-generated resource from the
+#     resource list.
+#   * if the exampleCanonical is an id or name, SUSHI will replace
+#     it with the correct canonical when generating the IG JSON.
+#   * groupingId can be used, but top-level groups syntax may be a
+#     better option (see below).
+# The following are simple examples to demonstrate what this might
+# look like:
+#
+# resources:
+#   Patient/my-example-patient:
+#     name: My Example Patient
+#     description: An example Patient
+#     exampleBoolean: true
+#   Patient/bad-example: omit
+#
+#
+# Groups can control certain aspects of the IG generation.  The IG
+# documentation recommends that authors use the default groups that
+# are provided by the templating framework, but if authors want to
+# use their own instead, they can use the mechanism below.  This will
+# create IG.definition.grouping entries and associate the individual
+# resource entries with the corresponding groupIds. If a resource
+# is specified by id or name, SUSHI will replace it with the correct
+# URL when generating the IG JSON.
+#
+# groups:
+#   GroupA:
+#     name: Group A
+#     description: The Alpha Group
+#     resources:
+#     - StructureDefinition/animal-patient
+#     - StructureDefinition/arm-procedure
+#   GroupB:
+#     name: Group B
+#     description: The Beta Group
+#     resources:
+#     - StructureDefinition/bark-control
+#     - StructureDefinition/bee-sting
+#
+#
+# The ImplementationGuide resource defines several other properties
+# not represented above. These properties can be used as-is and
+# should follow the format defined in ImplementationGuide:
+# * date
+# * meta
+# * implicitRules
+# * language
+# * text
+# * contained
+# * extension
+# * modifierExtension
+experimental: false
+# * useContext
+copyright: This content is licensed under a Creative Commons Attribution 4.0 International License. See [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+packageId: au.gov.digitalhealth.fhir.hcpd
+#
+#
+# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
+# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# The FSHOnly flag indicates if only FSH resources should be exported.
+# If set to true, no IG related content will be generated.
+# The default value for this property is false.
+#
+# FSHOnly: false
+#
+#
+# When set to true, the "short" and "definition" field on the root element of an Extension will
+# be set to the "Title" and "Description" of that Extension. Default is true.
+#
+# applyExtensionMetadataToRoot: true
+#
+#
+# The instanceOptions property is used to configure certain aspects of how SUSHI processes instances.
+# See the individual option definitions below for more detail.
+#
+instanceOptions:
+  # When set to true, slices must be referred to by name and not only by a numeric index in order to be used
+  # in an Instance's assignment rule. All slices appear in the order in which they are specified in FSH rules.
+  # While SUSHI defaults to false for legacy reasons, manualSliceOrding is recommended for new projects.
+  manualSliceOrdering: true # true | false
+  # Determines for which types of Instances SUSHI will automatically set meta.profile
+  # if InstanceOf references a profile:
+  #
+  # setMetaProfile: always # always | never | inline-only | standalone-only
+  #
+  #
+  # Determines for which types of Instances SUSHI will automatically set id
+  # if InstanceOf references a profile:
+  #
+  # setId: always # always | standalone-only

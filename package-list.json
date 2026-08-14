@@ -1,0 +1,38 @@
+{
+  "package-id" : "au.gov.digitalhealth.hcpd",
+  "title" : "Health Connect Australia Provider Directory",
+  "canonical" : "http://digitalhealth.gov.au/fhir/hcpd",
+  "category" : "Administration",
+  "list" : [
+    {
+      "version" : "current",
+      "desc" : "Latest released draft build",
+      "path" : "https://implementer.digitalhealth.gov.au/fhir/hcpd/currentdraft",
+      "status" : "ci-build",
+      "fhirversion" : "4.0.1",
+      "current" : true
+    },
+    {
+      "version" : "26.0.0",
+      "date" : "2026-04-29",
+      "desc" : "Post community consultation initial release",
+      "first" : "true", 
+      "path" : "https://implementer.digitalhealth.gov.au/fhir/hcpd/26.0.0",
+      "status" : "release",
+      "sequence" : "Release 1",
+      "fhirversion" : "4.0.1",
+      "current" : false
+    },
+    {
+      "version" : "26.0.1",
+      "date" : "2026-05-21",
+      "desc" : "Patch release community contributions",
+      "first" : "false",
+      "path" : "https://implementer.digitalhealth.gov.au/fhir/hcpd/26.0.1",
+      "status" : "release",
+      "sequence" : "Release 2",
+      "fhirversion" : "4.0.1",
+      "current" : false
+    }
+  ]
+}
