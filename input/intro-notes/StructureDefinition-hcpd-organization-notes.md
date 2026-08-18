@@ -122,8 +122,14 @@ This implementation supports the following `_revinclude` parameters when searchi
 
 #### Example usage
 
+This query returns a Bundle containing the Organization with id 123, plus any Location and HealthcareService resources that reference it.
+
 ```text
-GET /Organization/123?_revinclude=Location:organization&_revinclude=HealthcareService:organization
+GET /Organization?_id=123&_revinclude=Location:organization&_revinclude=HealthcareService:organization
 ```
 
-This query returns the Organization resource along with all associated Locations and HealthcareServices.
+This query returns a Bundle containing the Organization with id 123, plus any PractitionerRole resources where PractitionerRole.organization references that Organization.
+
+```text
+GET /Organization?_id=123&_revinclude=PractitionerRole:organization
+```
