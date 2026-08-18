@@ -3,11 +3,12 @@
 Interested in contributing to this IG? See the [Contributing guide](contributing.html) for how to raise issues and propose changes.
 
 ### Release 26.0.0 (Snapshot for HL7 AU Connectathon)
-- Publication date: 2026-08-14
+- Publication date: 2026-08-18
 - Publication status: Snapshot HL7 AU Connectathon Aug 25 & 26, 2026 
 - Based on FHIR version: 4.0.1
 
 #### Changes in this version
+- Adds HCPD API page defining operational behaviour for real-time search and read interactions in the Health Connect Provider Directory API.
 - Makes identifier for Practitioner.qualification optional and removes the invariant that at least one professional registration must be present in qualifications (Ahpra or other professional registration)".
 - Removes the invariants from PractitionerRole "Either Ahpra or PRN identifier SHALL exist, but not both. While a practitioner can have more than one professional registration" and "Either Ahpra or PRN identifier SHALL exist, but not both. While a practitioner can have more than one professional registration" for those cases where there isn't a AHPRA or PRN.
 - Makes `Organization.active` mandatory (minimum cardinality set to 1) in the HCPD Organization profile.
