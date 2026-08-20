@@ -91,7 +91,7 @@ Description: "This profile defines a Health Connect Provider Directory entry for
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding = $HCPD_ResponsiblePartyType_CS#organisation-initiated (exactly)
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding 1..1 MS
 * extension[deactivated] ^short = "Indicates if Endpoint service is deactivated"
-* extension[deactivated] ^definition = "Indicates if Endpoint service is deactivated."
+* extension[deactivated] ^definition = "When present, this extension marks the Endpoint as deactivated, and deactivation automatically cascades to all child resources."
 * extension[deactivated] ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/obligation"
 * extension[deactivated] ^extension[=].extension[+].url = "code"
 * extension[deactivated] ^extension[=].extension[=].valueCode = #SHALL:populate-if-known

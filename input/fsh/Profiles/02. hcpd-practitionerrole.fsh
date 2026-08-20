@@ -32,7 +32,7 @@ Description: "This profile defines a Health Connect Provider Directory entry for
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding from $HCPD_ResponsiblePartyType_VS (required)
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding 1..2 MS
 * extension[deactivated] ^short = "Indicates whether the PractitionerRole should be hidden."
-* extension[deactivated] ^definition = "A coded value, when present, indicates whether the PractitionerRole should be hidden from display in the Provider Directory."
+* extension[deactivated] ^definition = "When present, this extension marks the PractitionerRole as deactivated, and deactivation automatically cascades to all child resources."
 * extension[deactivated] ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/obligation"
 * extension[deactivated] ^extension[=].extension[+].url = "code"
 * extension[deactivated] ^extension[=].extension[=].valueCode = #SHALL:populate-if-known

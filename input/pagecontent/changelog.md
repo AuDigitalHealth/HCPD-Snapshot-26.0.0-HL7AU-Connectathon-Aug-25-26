@@ -2,9 +2,9 @@
 
 Interested in contributing to this IG? See the [Contributing guide](contributing.html) for how to raise issues and propose changes.
 
-### Release 26.0.0 (Snapshot for HL7 AU Connectathon)
-- Publication date: 2026-08-18
-- Publication status: Snapshot HL7 AU Connectathon Aug 25 & 26, 2026 
+### Release 26.0.0 (Final release)
+- Publication date: 2026-08-20
+- Publication status: release
 - Based on FHIR version: 4.0.1
 
 #### Changes in this version

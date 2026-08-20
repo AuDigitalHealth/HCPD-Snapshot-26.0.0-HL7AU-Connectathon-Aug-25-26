@@ -32,7 +32,7 @@ This guide is divided into several pages which are listed at the top of each pag
   - [Capability Statements](capability-statements.html): This page defines the expected FHIR capabilities of Health Connect Provider Directory Requester and Health Connect Provider Directory Responder.
   - [Search Parameters](artifacts.html#behavior-search-parameters): This page lists the FHIR search parameters that are defined in this guide.
 - [Examples](examples.html): This page lists the sample instances of FHIR resources conforming to the FHIR profiles.
-- [HCPD API](hcpdAPI.html): This page defines operational behaviour for real-time search and read interactions in the Health Connect Provider Directory API.
+- [HCPD API](api-overview.html): This page defines operational behaviour for real-time search and read interactions in the Health Connect Provider Directory API.
 - [Support](downloads.html): This section provides support resources for implementers.
   - [Known Issues](known-issues.html): This page lists known issues with this specification at the time of publishing along with their descriptions.
   - [Downloads](downloads.html): This page provides links to downloadable artefacts including the Agency FHIR NPM package.

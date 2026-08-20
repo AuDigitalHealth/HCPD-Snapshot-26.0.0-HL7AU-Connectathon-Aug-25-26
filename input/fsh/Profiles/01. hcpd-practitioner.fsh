@@ -53,7 +53,7 @@ healthcare identifier (HPI-I)."
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding = $HCPD_ResponsiblePartyType_CS#practitioner-initiated (exactly)
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding 1..1 MS
 * extension[deactivated] ^short = "indicates whether the Practitioner should be hidden."
-* extension[deactivated] ^definition = "A coded value, when present, indicates whether the Practitioner should be hidden from display in the Provider Directory."
+* extension[deactivated] ^definition = "When present, this extension marks the Practitioner as deactivated, and deactivation automatically cascades to all child resources."
 * extension[deactivated] ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/obligation"
 * extension[deactivated] ^extension[=].extension[+].url = "code"
 * extension[deactivated] ^extension[=].extension[=].valueCode = #SHALL:populate-if-known

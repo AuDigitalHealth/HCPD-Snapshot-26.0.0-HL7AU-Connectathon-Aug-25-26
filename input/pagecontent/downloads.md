@@ -19,3 +19,4 @@ All examples included in this implementation guide are available for download:
 
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
+- [TTL](examples.ttl.zip)

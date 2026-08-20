@@ -93,8 +93,12 @@ pages:
       title: Search Parameters
   examples.md:
     title: Examples
-  hcpdAPI.md:
-    title: HCPD API
+  api-overview.md:
+    title: Health Connect Provider Directory API Overview
+    search-api.md:
+      title: Search API Technical Specification
+    export-api.md:
+      title: Export API Technical Specification
   support.md:
     title: Support
     known-issues.md:
@@ -200,7 +204,10 @@ menu:
     "Capability Statements": capability-statements.html
     "Search Parameters": search-parameters.html
   Examples: examples.html
-  HCPD API: hcpdAPI.html
+  HCPD API:
+    "HCPD API Summary": api-overview.html
+    "Search API": search-api.html
+    "Export API": export-api.html
   Support:
     "Known Issues": known-issues.html
     "Downloads": downloads.html

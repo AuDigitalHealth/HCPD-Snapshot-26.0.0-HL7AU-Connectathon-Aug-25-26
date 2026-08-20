@@ -24,7 +24,7 @@ Description: "This profile defines a Health Connect Provider Directory entry for
 * extension contains Deactivated named deactivated 0..1 MS and Suppressed named suppressed 0..1 MS
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding = $HCPD_ResponsiblePartyType_CS#organisation-initiated (exactly)
 * extension[deactivated].extension[deactivatedBy].valueCodeableConcept.coding 1..1 MS
-* extension[deactivated] ^definition = "When present, this extension triggers suppression behavior that automatically cascades to all child resources (HealthcareService, Location, PractitionerRole, Endpoint). The includeSelf sub-extension controls whether the Organization itself is also suppressed or remains visible while its children are suppressed."
+* extension[deactivated] ^definition = "When present, this extension marks the Organisation as deactivated, and deactivation automatically cascades to all child resources (HealthcareService, Location, PractitionerRole, Endpoint)."
 * extension[deactivated] ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/obligation"
 * extension[deactivated] ^extension[=].extension[+].url = "code"
 * extension[deactivated] ^extension[=].extension[=].valueCode = #SHALL:populate-if-known
