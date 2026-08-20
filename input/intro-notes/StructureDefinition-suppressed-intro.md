@@ -19,7 +19,7 @@ This extension enables several suppression patterns:
    - Organization with Suppressed extension (organisation-initiated) triggers cascade suppression to all child resources
    - The nested `includeSelf` sub-extension controls whether the Organization itself is also hidden:
      - When true: Organization hides itself and automatically cascades to suppress everything related (locations, services, etc.)
-     - When false: Organization keeps itself visible but cascade automatically hides all related resources (locations, services, etc.)
+     - When false or missing: Organization remains visible in Provider Directory listings
    
 3. **PractitionerRole specific suppression**:
    - PractitionerRole with Suppressed extension is hidden without affecting the Practitioner profile
@@ -31,7 +31,7 @@ This extension enables several suppression patterns:
 - For Organization profiles, the nested `includeSelf` sub-extension controls whether the Organization itself is suppressed in addition to cascade suppression of child resources.
 - Suppressed resources remain stored in the internal Health Connect Provider Directory system but are excluded from the external IG and API responses.
 - Downstream vendors no longer receive the resources in API payloads but must still handle the consequences of suppression (i.e., missing expected resources).
-- Client requester actors of the bulk data export service will receive communication about suppressed identifiers via a List resource but not the suppressed resources themselves.
+- Client requester actors of the bulk data export service may receive suppressed resources when the client uses the `_since` parameter in their bulk export request.
 - Client requester actors **SHALL** be required to cleanse their local systems of suppressed resources using the related identifiers.
 
 ### Hierarchical suppression model
