@@ -15,7 +15,7 @@ Description: "Search resources by suppression state using the Suppressed extensi
 * base[4] = #Endpoint
 * base[5] = #Organization
 * type = #token
-* expression = "extension('http://digitalhealth.gov.au/fhir/cc/StructureDefinition/suppressed').extension.where(url='suppressedBy').value.ofType(CodeableConcept).coding.exists() and (($this is Organization).not() or extension('http://digitalhealth.gov.au/fhir/cc/StructureDefinition/suppressed').extension.where(url='includeSelf').value.ofType(boolean).where($this = true).exists())"
+* expression = "extension('http://digitalhealth.gov.au/fhir/cc/StructureDefinition/suppressed').extension.where(url='suppressedBy').value.ofType(CodeableConcept).coding.exists() and (($this is Organization).not() or extension('http://digitalhealth.gov.au/fhir/cc/StructureDefinition/suppressed').extension.where(url='includeSelf').value.ofType(boolean).where($this = false).exists().not())"
 * target[0] = #Practitioner
 * target[1] = #PractitionerRole
 * target[2] = #HealthcareService
